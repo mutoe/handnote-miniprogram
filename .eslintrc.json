@@ -1,83 +1,83 @@
 {
-    "root": true,
-    "parserOptions": {
-        "parser": "@typescript-eslint/parser",
-        "project": "tsconfig.json",
-        "tsconfigRootDir": "./"
-    },
-    "plugins": ["prettier", "@typescript-eslint"],
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended",
-        "prettier",
-        "prettier/standard",
-        "prettier/@typescript-eslint"
+  "root": true,
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "project": "tsconfig.json",
+    "tsconfigRootDir": "./"
+  },
+  "plugins": ["prettier", "@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/standard",
+    "prettier/@typescript-eslint"
+  ],
+  "rules": {
+    "prettier/prettier": "warn",
+    "no-console": "warn",
+    "no-dupe-class-members": "off",
+    "require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": true
+        }
+      }
     ],
-    "rules": {
-        "prettier/prettier": "warn",
-        "no-console": "warn",
-        "no-dupe-class-members": "off",
-        "require-jsdoc": [
-            "error",
-            {
-                "require": {
-                    "FunctionDeclaration": true,
-                    "MethodDefinition": true
-                }
-            }
-        ],
-        "@typescript-eslint/generic-type-naming": 1,
-        "@typescript-eslint/member-naming": [
-            1,
-            {
-                "private": "^_",
-                "public": "^\\$?[a-z][a-zA-Z0-9]*$"
-            }
-        ],
-        "@typescript-eslint/member-ordering": 1,
-        "@typescript-eslint/no-extraneous-class": [2, {}],
-        "@typescript-eslint/no-this-alias": [
-            1,
-            {
-                "allowedNames": []
-            }
-        ],
-        "@typescript-eslint/no-for-in-array": 1,
-        "@typescript-eslint/no-non-null-assertion": 0,
-        "@typescript-eslint/no-unnecessary-qualifier": 0,
-        "@typescript-eslint/no-unnecessary-type-assertion": [
-            0,
-            {
-                "typesToIgnore": []
-            }
-        ],
-        "@typescript-eslint/prefer-function-type": 0,
-        "@typescript-eslint/explicit-function-return-type": [
-            1,
-            {
-                "allowExpressions": true
-            }
-        ]
-    },
-    "env": {
-        "es6": true
-    },
-    "globals": {
-        "module": "readonly",
-        "App": "readonly",
-        "Page": "readonly",
-        "Component": "readonly",
-        "Behavior": "readonly",
-        "wx": "readonly",
-        "getApp": "readonly",
-        "getCurrentPages": "readonly",
-        "console": "readonly",
-        "setTimeout": "readonly",
-        "clearTimeout": "readonly",
-        "setInterval": "readonly",
-        "clearInterval": "readonly",
-        "getRegExp": "readonly",
-        "getDate": "readonly"
-    }
+    "@typescript-eslint/generic-type-naming": 1,
+    "@typescript-eslint/member-naming": [
+      1,
+      {
+        "private": "^_",
+        "public": "^\\$?[a-z][a-zA-Z0-9]*$"
+      }
+    ],
+    "@typescript-eslint/member-ordering": 1,
+    "@typescript-eslint/no-extraneous-class": [2, {}],
+    "@typescript-eslint/no-this-alias": [
+      1,
+      {
+        "allowedNames": []
+      }
+    ],
+    "@typescript-eslint/no-for-in-array": 1,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/no-unnecessary-qualifier": 0,
+    "@typescript-eslint/no-unnecessary-type-assertion": [
+      0,
+      {
+        "typesToIgnore": []
+      }
+    ],
+    "@typescript-eslint/prefer-function-type": 0,
+    "@typescript-eslint/explicit-function-return-type": [
+      1,
+      {
+        "allowExpressions": true
+      }
+    ]
+  },
+  "env": {
+    "es6": true
+  },
+  "globals": {
+    "module": "readonly",
+    "App": "readonly",
+    "Page": "readonly",
+    "Component": "readonly",
+    "Behavior": "readonly",
+    "wx": "readonly",
+    "getApp": "readonly",
+    "getCurrentPages": "readonly",
+    "console": "readonly",
+    "setTimeout": "readonly",
+    "clearTimeout": "readonly",
+    "setInterval": "readonly",
+    "clearInterval": "readonly",
+    "getRegExp": "readonly",
+    "getDate": "readonly"
+  }
 }

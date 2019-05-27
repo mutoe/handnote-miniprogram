@@ -1,68 +1,68 @@
 {
-    "$schema": "http://json.schemastore.org/prettierrc",
-    "printWidth": 100,
-    "tabWidth": 4,
-    "useTabs": false,
-    "semi": true,
-    "singleQuote": false,
-    "bracketSpacing": true,
-    "trailingComma": "all",
-    "arrowParens": "always",
-    "endOfLine": "auto",
-    "overrides": [
-        {
-            "files": "*.{wxml,html}",
-            "options": {
-                "parser": "angular",
-                "htmlWhitespaceSensitivity": "strict",
-                "proseWrap": "never"
-            }
-        },
-        {
-            "files": "*.svg",
-            "options": {
-                "parser": "html",
-                "htmlWhitespaceSensitivity": "ignore"
-            }
-        },
-        {
-            "files": "*.wxss",
-            "options": {
-                "parser": "css"
-            }
-        },
-        {
-            "files": [".*rc", "*.json"],
-            "options": {
-                "parser": "json"
-            }
-        },
-        {
-            "files": ["*.{jsonc,cjson}", ".vscode/*", "tsconfig.json"],
-            "options": {
-                "parser": "json5",
-                "quoteProps": "preserve",
-                "singleQuote": false,
-                "trailingComma": "all"
-            }
-        },
-        {
-            "files": ".npmrc",
-            "options": {
-                "parser": "markdown"
-            }
-        },
-        {
-            "files": "*.{wxs,js}",
-            "options": {
-                "parser": "babel"
-            }
-        },
-        {
-            "files": "*.wxts",
-            "options": {
-                "parser": "typescript"
-            }
-        }
-    ]
+  "$schema": "http://json.schemastore.org/prettierrc",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": "*.{wxml,html}",
+      "options": {
+        "parser": "angular",
+        "htmlWhitespaceSensitivity": "strict",
+        "proseWrap": "never"
+      }
+    },
+    {
+      "files": "*.svg",
+      "options": {
+        "parser": "html",
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": "*.wxss",
+      "options": {
+        "parser": "css"
+      }
+    },
+    {
+      "files": [".*rc", "*.json"],
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": ["*.{jsonc,cjson}", ".vscode/*", "tsconfig.json"],
+      "options": {
+        "parser": "json5",
+        "quoteProps": "preserve",
+        "singleQuote": false,
+        "trailingComma": "all"
+      }
+    },
+    {
+      "files": ".npmrc",
+      "options": {
+        "parser": "markdown"
+      }
+    },
+    {
+      "files": "*.{wxs,js}",
+      "options": {
+        "parser": "babel"
+      }
+    },
+    {
+      "files": "*.wxts",
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
 }

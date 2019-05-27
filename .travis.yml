@@ -3,8 +3,8 @@
 sudo: false
 language: node_js
 node_js:
-    - "8"
-    - "10"
-    - stable
+  - '8'
+  - '10'
+  - stable
 git:
-    depth: 1
+  depth: 1

@@ -17,23 +17,23 @@
 // @import "/style/common.wxss"; // 编译之后不便
 
 .container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 200rpx 0;
-    box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
 }
 
 progress {
-    color: red;
+  color: red;
 }
 
 .circle {
-    /*
+  /*
     * 可直接使用 url() 本地资源文件
     * 打包之后会对图片进行无损压缩和inline处理
     */
-    background-image: url("./assets/icon/test.svg");
+  background-image: url('./assets/icon/test.svg');
 }

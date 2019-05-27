@@ -1,14 +1,14 @@
 {
-    "pages": [
-        "pages/index/index",
-        /*# INJECT_START {"key": "page"} #*/
-        /*# INJECT_END #*/
-        "pages/logs/logs",
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black",
-    },
+  "pages": [
+    "pages/index/index",
+    /*# INJECT_START {"key": "page"} #*/
+    /*# INJECT_END #*/
+    "pages/logs/logs",
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+  },
 }
