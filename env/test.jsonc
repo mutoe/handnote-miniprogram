@@ -3,5 +3,6 @@
   "var": {
     "APP_ID": "wx84a4d57261f89be7", // 测试环境 小程序 AppID
     "VERSION": "{{package.version}}", //使用当前package.json中的version字段进行替换
+    "BASE_URL": "http://localhost:3050/api", // 测试环境 API
   },
 }

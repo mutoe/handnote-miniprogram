@@ -4064,6 +4064,38 @@ miniprogram-build@^6.2.1:
     rollup-plugin-node-resolve "^5.0.0"
     rollup-plugin-typescript "^1.0.0"
 
+miniprogram-cancel-token@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/miniprogram-cancel-token/-/miniprogram-cancel-token-4.5.1.tgz#b246d3eab54e1d2837169096f8cb55ca0b02376e"
+  integrity sha512-C0lXuWM7Fp1e6UgVxn9HjDiZQGBXtHaWrrdJsDhe9kySbYDEdLFa1pnlcqKLzBxL7CmYw5zrXMXHGplbH9x21g==
+
+miniprogram-network-life-cycle@^4.5.3:
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/miniprogram-network-life-cycle/-/miniprogram-network-life-cycle-4.5.3.tgz#4d9d2d77a1ec6b84c3c45d20ded8d9c26bac9bd9"
+  integrity sha512-xQPXovCbg5oJe79W2gIHCPxTSaHOIYsyM0hRIIgQ+WWyLaCapltAFxvQ/yoyzQ7aew5NzY0rKNtzfO3gGHV0tw==
+  dependencies:
+    miniprogram-cancel-token "^4.5.1"
+    miniprogram-network-utils "^4.5.2"
+
+miniprogram-network-utils@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/miniprogram-network-utils/-/miniprogram-network-utils-4.5.2.tgz#824b178ec3cce4a1cf18bec486ecfde188609b83"
+  integrity sha512-FTFqa6TUpa1uh5Nvtm6JmvUV2BMFnFjs08CJ4KFsBjo3rS3RlYiZ9jz+Rjloc3AC2nBOv8QFAZWKIeM+g6zoDA==
+
+miniprogram-queue@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/miniprogram-queue/-/miniprogram-queue-4.5.1.tgz#9d4d568ac9c0fc93dde0ab76ad60289f76455857"
+  integrity sha512-Vu3e8WE2r8kaFK3A1v1sWAjcoASGhqsk1CNBNEmy44e64UtX6X4tKZI0SQMaP+dUaLw9SBmeOz7W56eL6S6r8Q==
+
+miniprogram-request@^4.5.3:
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/miniprogram-request/-/miniprogram-request-4.5.3.tgz#0916a14dd63ec319e48eedf664a268929c630f11"
+  integrity sha512-84F/2V4WHLAqztiQgB1n9ZDC4UxIeHsP4onOThkklV3YPqxQINew8Emd+GVYIkkpdZc/Mr19bOMYMIAIH4OjiA==
+  dependencies:
+    miniprogram-network-life-cycle "^4.5.3"
+    miniprogram-network-utils "^4.5.2"
+    miniprogram-queue "^4.5.1"
+
 minizlib@^1.1.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/minizlib/-/minizlib-1.2.1.tgz#dd27ea6136243c7c880684e8672bb3a45fd9b614"

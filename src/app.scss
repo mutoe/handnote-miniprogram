@@ -2,7 +2,7 @@
 * import 导入 scss 文件，
 * 编译时会自动合并
 */
-// @import "var"; // 导入 var.scss
+@import 'var'; // 导入 var.scss
 
 /*
 * import `~` 开头导入npm包中的样式,

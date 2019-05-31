@@ -58,6 +58,7 @@
   },
   "ignoreFiles": [
     "**/*.wxml",
+    "**/*.wxss",
     "dist/",
     "node_modules/",
     "**/*.ts",

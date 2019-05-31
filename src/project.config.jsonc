@@ -4,8 +4,8 @@
     "ignore": [],
   },
   "compileType": "miniprogram",
-  "libVersion": "2.4.0",
-  "projectname": "miniprogram-template",
+  "libVersion": "2.6.6",
+  "projectname": "handnote",
   "setting": {
     "nodeModules": true,
     "newFeature": true,

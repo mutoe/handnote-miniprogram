@@ -3,12 +3,11 @@
     "pages/index/index",
     /*# INJECT_START {"key": "page"} #*/
     /*# INJECT_END #*/
-    "pages/logs/logs",
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "掌心日历",
     "navigationBarTextStyle": "black",
   },
 }

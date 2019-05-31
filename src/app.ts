@@ -1,59 +1,51 @@
+import { REQUEST, transformRequestResponseOkData } from 'miniprogram-request'
+
 //app.ts
 export interface MyApp {
-  globalData: {
-    userInfo?: wx.UserInfo
-  }
+  globalData: {}
   userInfoReadyCallback?(res: wx.UserInfo): void
-}
-
-/**
- * 认证
- */
-function auth(): Promise<wx.GetUserInfoSuccessCallbackResult> {
-  return new Promise<wx.GetUserInfoSuccessCallbackResult>((resolve, reject) => {
-    wx.getUserInfo({
-      success: resolve,
-      fail: reject,
-    })
-  })
-}
-
-/**
- * 获取用户信息
- */
-async function getUserInfo(): Promise<wx.GetUserInfoSuccessCallbackResult['userInfo']> {
-  const userInfo = await auth()
-  return userInfo.userInfo
+  wxLogin(): void
+  chechSession(): void
+  getAccessToken(): string
 }
 
 App<MyApp>({
   onLaunch() {
-    console.log('{{VERSION}}')
-    // 展示本地存储能力
-    const logs: number[] = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-    // 登录
+    REQUEST.Defaults.baseURL = '{{BASE_URL}}'
+    REQUEST.Defaults.transformResponse = transformRequestResponseOkData
+
+    console.log('{{VERSION}}') // eslint-disable-line no-console
+    // 检查登录态
+    this.chechSession()
+  },
+
+  chechSession() {
+    // 检查 session 是否过期 过期就刷新服务端保存的 session_key
+    wx.checkSession({
+      success: () => {
+        if (!wx.getStorageSync('accessToken')) this.wxLogin()
+      },
+      fail: () => {
+        this.wxLogin()
+      },
+    })
+  },
+
+  wxLogin() {
     wx.login({
-      success(_res) {
-        // JSON.stringify(this);
-        console.log(_res.code)
-        // setTimeout();
-        // 发送 _res.code 到后台换取 openId, sessionKey, unionId
-      },
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: (res) => {
-        //@ts-ignore
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+      success: async ({ code }) => {
+        interface Returns {
+          accessToken: string
         }
+        const { accessToken } = await REQUEST.get<Returns>('/wechat/login', { code })
+        wx.setStorageSync('accessToken', accessToken)
       },
     })
-    getUserInfo().then(console.log)
   },
-  globalData: {
-    userInfo: undefined,
+
+  getAccessToken() {
+    return wx.getStorageSync('accessToken')
   },
+
+  globalData: {},
 })
