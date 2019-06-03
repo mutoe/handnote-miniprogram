@@ -1,0 +1,11 @@
+<!--
+ * Page: pages/setting/index/index
+ * License: MIT
+ * Created: 2019-05-31 13:58
+-->
+
+<view class="Setting">
+  <van-cell-group>
+    <van-cell title="生理期" is-link url="/pages/setting/menstrual/menstrual"></van-cell>
+  </van-cell-group>
+</view>

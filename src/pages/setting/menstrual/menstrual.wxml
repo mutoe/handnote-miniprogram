@@ -1,0 +1,57 @@
+<!--
+ * Page: pages/setting/menstrual/menstrual
+ * License: MIT
+ * Created: 2019-05-31 14:06
+-->
+
+<view class="SettingMenstrual">
+  <van-cell-group>
+    <van-switch-cell
+      title="启用"
+      checked="{{ enable }}"
+      bind:tap="onChangeEnable"
+    ></van-switch-cell>
+  </van-cell-group>
+
+  <van-cell-group>
+    <picker
+      mode="date"
+      value="{{ filter.formatTime(lastDate) }}"
+      bind:change="onChangeLastDate"
+    >
+      <van-cell
+        title="上次时间"
+        label="上次生理期开始的日期"
+        value="{{ filter.formatTime(lastDate, 'YYYY年MM月DD日') }}"
+      ></van-cell>
+    </picker>
+
+    <picker
+      mode="selector"
+      range="{{ durations }}"
+      value="{{ duration - 1 }}"
+      bind:change="onChangeDuration"
+    >
+      <van-cell
+        title="持续时间"
+        label="每个周期持续的天数"
+        value="{{ duration }} 天/周期"
+      ></van-cell>
+    </picker>
+
+    <picker
+      mode="selector"
+      range="{{ cycles }}"
+      value="{{ cycle - 14 }}"
+      bind:change="onChangeCycle"
+    >
+      <van-cell
+        title="周期"
+        label="两次生理期开始时间间隔的天数"
+        value="每 {{ cycle }} 天"
+      ></van-cell>
+    </picker>
+  </van-cell-group>
+</view>
+
+<wxs module="filter" src="../../../wxs/filter.wxs"></wxs>

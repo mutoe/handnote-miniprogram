@@ -3,3 +3,25 @@
  * License: MIT
  * Created: 2019-06-03 11:54
  */
+@import '../../var';
+
+.Index {
+  padding: 20rpx;
+
+  .items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20rpx;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 80%;
+      height: 30vw;
+      border: 1px solid $border-color;
+      border-radius: 10rpx;
+    }
+  }
+}

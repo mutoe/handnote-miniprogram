@@ -1,0 +1,9 @@
+/*!
+ * Page: pages/setting/menstrual/menstrual
+ * License: MIT
+ * Created: 2019-05-31 14:06
+ */
+{
+  "navigationBarTitleText": "生理期设置",
+  "usingComponents": {}
+}

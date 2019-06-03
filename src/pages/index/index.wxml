@@ -4,4 +4,11 @@
  * Created: 2019-06-03 11:54
 -->
 
-<view>page: index</view>
+<view class="Index">
+  <view class="items">
+    <navigator class="item" wx:for="{{ list }}" wx:key="{{ index }}" url="{{ item.url }}">
+      <van-icon name="{{ item.icon }}" size="4em"></van-icon>
+      {{ item.label }}
+    </navigator>
+  </view>
+</view>

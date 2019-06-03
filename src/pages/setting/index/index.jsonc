@@ -1,0 +1,9 @@
+/*!
+ * Page: pages/setting/index/index
+ * License: MIT
+ * Created: 2019-05-31 13:58
+ */
+{
+  "navigationBarTitleText": "更多功能",
+  "usingComponents": {}
+}

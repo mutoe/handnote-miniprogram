@@ -1,0 +1,52 @@
+/// <reference types="miniprogram-wxs"/>
+
+/**
+ * 数字格式化
+ * @param n 整数
+ */
+function formatNumber(n: number): string {
+  const str = n.toString()
+  return str[1] ? str : '0' + str
+}
+
+/**
+ * 日期格式化
+ * @param dateInput
+ * @param formatter
+ * @example formatter(Date.now(), 'YYYY-MM-DD') // => 2019-10-10
+ */
+function formatTime(dateInput?: Date | string | number, formatter = 'YYYY-MM-DD'): string {
+  const date = typeof dateInput === 'object' ? dateInput : getDate(dateInput)
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  const second = date.getSeconds()
+
+  const YYYY = '' + year
+  const YY = YYYY.substring(2, 4)
+  const M = month
+  const MM = formatNumber(M)
+  const D = day
+  const DD = formatNumber(D)
+  const H = hour
+  const HH = formatNumber(H)
+  const m = minute
+  const mm = formatNumber(m)
+  const s = second
+  const ss = formatNumber(s)
+
+  return formatter
+    .replace(getRegExp('YYYY'), YYYY)
+    .replace(getRegExp('YY'), YY)
+    .replace(getRegExp('MM'), MM)
+    .replace(getRegExp('DD'), DD)
+    .replace(getRegExp('HH'), HH)
+    .replace(getRegExp('mm'), mm)
+    .replace(getRegExp('ss'), ss)
+}
+
+module.exports = {
+  formatTime,
+}
