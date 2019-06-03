@@ -1,0 +1,17 @@
+<!--
+ * Component: components/index/index
+ * License: MIT
+ * Created: 2019-06-03 15:12
+-->
+
+<view class="month-view">
+  <view wx:for="{{ prevMonth }}" wx:key="prev-{{ item.label }}" class="item">
+    {{ item.label }}
+  </view>
+  <view wx:for="{{ currentMonth }}" wx:key="current-{{ item.label }}" class="item current-month">
+    {{ item.label }}
+  </view>
+  <view wx:for="{{ nextMonth }}" wx:key="next-{{ item.label }}" class="item">
+    {{ item.label }}
+  </view>
+</view>

@@ -3,5 +3,8 @@
  * License: MIT
  * Created: 2019-06-03 09:15
  */
-
-{}
+{
+  "usingComponents": {
+    "month-view": "/components/month-view/index"
+  }
+}

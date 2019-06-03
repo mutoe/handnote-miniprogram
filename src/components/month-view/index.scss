@@ -1,0 +1,24 @@
+/*!
+ * Component: components/index/index
+ * License: MIT
+ * Created: 2019-06-03 15:12
+ */
+
+@import '../../var';
+
+.month-view {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: (100vw/7);
+    color: $decor-color;
+
+    &.current-month {
+      color: $text-color;
+    }
+  }
+}
