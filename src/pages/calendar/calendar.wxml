@@ -10,25 +10,30 @@
   </picker>
 </view>
 
-<view class="Calendar" style="padding-top: {{ navigationHeight }}px;">
+<template name="month-header">
   <view class="month-view month-header">
-    <view class="item">日</view>
-    <view class="item">一</view>
-    <view class="item">二</view>
-    <view class="item">三</view>
-    <view class="item">四</view>
-    <view class="item">五</view>
-    <view class="item">六</view>
+    <view
+      class="item"
+      wx:for="{{ ['日', '一', '二', '三', '四', '五', '六'] }}"
+      wx:key="{{ index }}"
+    >
+      {{ item }}
+    </view>
   </view>
+</template>
 
-  <swiper circular style="height: {{ viewHeight }}px;" bind:change="onChangeMonth">
+<view class="Calendar" style="padding-top: {{ navigationHeight }}px;">
+  <swiper circular style="height: calc({{ viewHeight }}px + 40rpx);" bind:change="onChangeMonth">
     <swiper-item>
+      <template is="month-header"></template>
       <month-view date="{{ layers[0] }}"></month-view>
     </swiper-item>
     <swiper-item>
+      <template is="month-header"></template>
       <month-view date="{{ layers[1] }}"></month-view>
     </swiper-item>
     <swiper-item>
+      <template is="month-header"></template>
       <month-view date="{{ layers[2] }}"></month-view>
     </swiper-item>
   </swiper>
