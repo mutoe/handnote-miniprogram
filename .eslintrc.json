@@ -28,6 +28,7 @@
       }
     ],
     "@typescript-eslint/generic-type-naming": 1,
+    "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/member-naming": [
       1,
       {

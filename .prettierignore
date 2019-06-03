@@ -10,6 +10,9 @@ node_modules/
 jspm_packages/
 bower_components/
 
+# Vendors
+src/vendors/
+
 # Lock.json
 package-lock.json
 yarn-lock.json

@@ -61,6 +61,7 @@
     "**/*.wxss",
     "dist/",
     "node_modules/",
+    "src/vendors/",
     "**/*.ts",
     "**/*.js",
     "**/*.wxts",

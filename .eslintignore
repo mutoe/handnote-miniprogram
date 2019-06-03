@@ -1,6 +1,9 @@
 # Output directory
 dist/
 
+# Vendors
+src/vendors/
+
 # Dependency directories
 node_modules/
 jspm_packages/

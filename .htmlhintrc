@@ -12,7 +12,7 @@
   "id-unique": true,
   "inline-script-disabled": true,
   "inline-style-disabled": false,
-  "space-tab-mixed-disabled": "space4",
+  "space-tab-mixed-disabled": "space2",
   "spec-char-escape": true,
   "src-not-empty": true,
   "style-disabled": true,

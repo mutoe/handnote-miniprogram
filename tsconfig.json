@@ -48,6 +48,7 @@
     "node_modules",
     "miniprogram_dist",
     "dist",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "src/vendors"
   ],
 }

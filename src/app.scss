@@ -1,14 +1,8 @@
-/*
-* import 导入 scss 文件，
-* 编译时会自动合并
-*/
-@import 'var'; // 导入 var.scss
+// 导入 var.scss
+@import 'var';
 
-/*
-* import `~` 开头导入npm包中的样式,
-* 支持直接包名和路径到指定文件
-*/
-// @import "~weui"; // 导入 weui的 npm 包,编译时会自动合并
+// 导入 vant-weapp 的 npm 包,编译时会自动合并
+@import 'vendors/vant/common/index.wxss';
 
 /*
 * import `wxss` 结尾的本地文件，表示使用 小程序的 import
