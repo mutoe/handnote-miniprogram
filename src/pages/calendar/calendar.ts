@@ -15,7 +15,7 @@ let lastLayer: 0 | 1 | 2 = 0
 Component({
   data: {
     layers: [0, 0, 0],
-    currentLayer: -1,
+    currentLayer: 0,
     pickerDate: '1970-01',
     navigationTitle: `掌心日历`,
     navigationStyle: '',
@@ -36,7 +36,7 @@ Component({
         const tabbar = this.getTabBar<TabbarData>()
         tabbar.setData({ active: 0 })
       }
-      this.initCanendar()
+      this.initCalendar()
       this.setData({
         rect,
         navigationStyle: app.getNavigationStyle(),
@@ -45,7 +45,27 @@ Component({
     },
   },
   methods: {
-    initCanendar(date = new Date()) {
+    /** 回到今天, 为了实现正确的左右滑动效果, 不直接调用 initCalendar 方法 */
+    gotoToday() {
+      const { layers, currentLayer } = this.data
+      const current = layers[currentLayer]
+      const now = new Date()
+      const index = +now > current ? 1 : 2
+      // 设置将要跳转到的图层并跳转
+      this.setData({
+        [`layers[${(currentLayer + index) % 3}]`]: +new Date(),
+        currentLayer: (currentLayer + index) % 3,
+      })
+      // 设置剩余两个图层
+      const year = now.getFullYear()
+      const month = now.getMonth()
+      this.setData({
+        [`layers[${(currentLayer + index + 1) % 3}]`]: +new Date(year, month + 1),
+        [`layers[${(currentLayer + index + 2) % 3}]`]: +new Date(year, month - 1),
+      })
+      // this.initCalendar()
+    },
+    initCalendar(date: number | string | Date = new Date()) {
       const now = new Date(date)
       const year = now.getFullYear()
       const month = now.getMonth()
@@ -93,7 +113,7 @@ Component({
       const str: string = event.detail.value
       const [year, month] = str.split('-').map((i) => +i)
       const date = new Date(year, month - 1, 1)
-      this.initCanendar(date)
+      this.initCalendar(date)
     },
   },
 })

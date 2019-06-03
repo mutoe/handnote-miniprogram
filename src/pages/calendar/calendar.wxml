@@ -4,7 +4,7 @@
  * Created: 2019-06-03 09:15
 -->
 
-<view class="custom-navigation" style="{{ navigationStyle }}">
+<view class="custom-navigation" style="{{ navigationStyle }}" catch:longpress="gotoToday">
   <picker mode="date" fields="month" value="{{ pickerDate }}" bind:change="onSelectMonth">
     {{ navigationTitle }}
   </picker>
@@ -23,7 +23,12 @@
 </template>
 
 <view class="Calendar" style="padding-top: {{ navigationHeight }}px;">
-  <swiper circular style="height: calc({{ viewHeight }}px + 40rpx);" bind:change="onChangeMonth">
+  <swiper
+    current="{{ currentLayer }}"
+    circular
+    style="height: calc({{ viewHeight }}px + 40rpx);"
+    bind:change="onChangeMonth"
+  >
     <swiper-item>
       <template is="month-header"></template>
       <month-view date="{{ layers[0] }}"></month-view>

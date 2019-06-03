@@ -11,6 +11,8 @@ export interface MyApp {
   wxLogin(): void
   chechSession(): void
   getAccessToken(): string
+  /** 读取数据 */
+  fetchData(): void
   /** 获取自定义导航栏样式 */
   getNavigationStyle(): string
   /** 获取导航条总高度 */
@@ -41,6 +43,7 @@ App<MyApp>({
           this.wxLogin()
         } else {
           REQUEST.Defaults.headers!.Authorization = `Bearer ${wx.getStorageSync('accessToken')}`
+          this.fetchData()
         }
       },
       fail: () => {
@@ -58,12 +61,20 @@ App<MyApp>({
         const { accessToken } = await REQUEST.get<Returns>('/wechat/login', { code })
         wx.setStorageSync('accessToken', accessToken)
         REQUEST.Defaults.headers!.Authorization = `Bearer ${accessToken}`
+        this.fetchData()
       },
     })
   },
 
   getAccessToken() {
     return wx.getStorageSync('accessToken')
+  },
+
+  async fetchData() {
+    const { menstrual } = await REQUEST.get('/user')
+    if (menstrual) {
+      wx.setStorage({ key: 'menstrual', data: menstrual })
+    }
   },
 
   getNavigationStyle() {

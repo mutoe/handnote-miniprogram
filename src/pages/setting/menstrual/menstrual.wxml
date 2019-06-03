@@ -14,11 +14,7 @@
   </van-cell-group>
 
   <van-cell-group>
-    <picker
-      mode="date"
-      value="{{ filter.formatTime(lastDate) }}"
-      bind:change="onChangeLastDate"
-    >
+    <picker mode="date" value="{{ filter.formatTime(lastDate) }}" bind:change="onChangeLastDate">
       <van-cell
         title="上次时间"
         label="上次生理期开始的日期"
