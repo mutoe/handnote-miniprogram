@@ -5,11 +5,16 @@ export interface MyApp {
   globalData: {
     date: Date
     clientWidth: number
+    menuRect: wx.Rect
   }
   userInfoReadyCallback?(res: wx.UserInfo): void
   wxLogin(): void
   chechSession(): void
   getAccessToken(): string
+  /** 获取自定义导航栏样式 */
+  getNavigationStyle(): string
+  /** 获取导航条总高度 */
+  getNavigationHeihgt(): number
 }
 
 App<MyApp>({
@@ -20,6 +25,7 @@ App<MyApp>({
       Authorization: null,
     }
     const { windowWidth } = wx.getSystemInfoSync()
+    this.globalData.menuRect = wx.getMenuButtonBoundingClientRect()
     this.globalData.clientWidth = windowWidth
 
     console.log('{{VERSION}}') // eslint-disable-line no-console
@@ -60,8 +66,21 @@ App<MyApp>({
     return wx.getStorageSync('accessToken')
   },
 
+  getNavigationStyle() {
+    const r = this.globalData.menuRect
+    const padding = this.globalData.clientWidth - r.right
+    const height = r.top + r.height + padding
+    return `padding: ${r.top}px ${padding}px ${padding}px;height: ${height}px;`
+  },
+  getNavigationHeihgt() {
+    const r = this.globalData.menuRect
+    const padding = this.globalData.clientWidth - r.right
+    return r.top + r.height + padding
+  },
+
   globalData: {
     date: new Date(),
     clientWidth: 750,
+    menuRect: {} as any,
   },
 })

@@ -4,7 +4,13 @@
  * Created: 2019-06-03 09:15
 -->
 
-<view class="Calendar">
+<view class="custom-navigation" style="{{ navigationStyle }}">
+  <picker mode="date" fields="month" bind:change="onSelectMonth">
+    {{ navigationTitle }}
+  </picker>
+</view>
+
+<view class="Calendar" style="padding-top: {{ navigationHeight }}px;">
   <view class="month-view month-header">
     <view class="item">日</view>
     <view class="item">一</view>

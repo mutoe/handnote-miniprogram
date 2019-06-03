@@ -4,6 +4,7 @@
  * Created: 2019-06-03 09:15
  */
 {
+  "navigationStyle": "custom",
   "usingComponents": {
     "month-view": "/components/month-view/index"
   }

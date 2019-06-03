@@ -29,6 +29,12 @@ Component({
     nextMonth: [] as object[],
   },
 
+  observers: {
+    date() {
+      this.initData()
+    },
+  },
+
   /**
    * lifecycle of component
    */
@@ -49,7 +55,9 @@ Component({
       const day = date.getDate()
       const currentMonth = getMonthArray(getDayInMonth(year, month))
       let firstDayInWeek = new Date(year, month - 1, 1).getDay()
-      const prevMonth = getMonthArray(getDayInMonth(year, month - 1)).slice(-1 * firstDayInWeek)
+      const prevMonth = getMonthArray(getDayInMonth(year, month - 1)).slice(
+        0 - firstDayInWeek || 31,
+      )
       const nextMonth = getMonthArray(getDayInMonth(year, month + 1)).slice(
         0,
         7 - ((firstDayInWeek + getDayInMonth(year, month)) % 7),
