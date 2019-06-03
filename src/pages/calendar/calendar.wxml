@@ -5,7 +5,7 @@
 -->
 
 <view class="custom-navigation" style="{{ navigationStyle }}">
-  <picker mode="date" fields="month" bind:change="onSelectMonth">
+  <picker mode="date" fields="month" value="{{ pickerDate }}" bind:change="onSelectMonth">
     {{ navigationTitle }}
   </picker>
 </view>

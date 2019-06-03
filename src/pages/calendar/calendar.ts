@@ -16,13 +16,17 @@ Component({
   data: {
     layers: [0, 0, 0],
     currentLayer: -1,
+    pickerDate: '1970-01',
     navigationTitle: `掌心日历`,
     navigationStyle: '',
     navigationHeight: 0,
   },
   observers: {
     currentLayer(index: number) {
-      this.updateView(this.data.layers[index])
+      const timestamp = this.data.layers[index]
+      this.updateView(timestamp)
+      const d = new Date(timestamp)
+      this.setData({ pickerDate: `${d.getFullYear()}-${d.getMonth() + 1}` })
     },
   },
   lifetimes: {
