@@ -1,7 +1,7 @@
-<!--
+/*!
  * Page: pages/index/index
  * License: MIT
  * Created: 2019-06-03 11:54
--->
+ */
 
-<view>page: index</view>
+{}

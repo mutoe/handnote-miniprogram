@@ -1,7 +1,7 @@
 /*!
- * Page: pages/index/Index
+ * Page: pages/calendar/Calendar
  * License: MIT
- * Created: 2019-06-03 11:54
+ * Created: 2019-06-03 09:15
  */
 
 import { TabbarData } from '../../custom-tab-bar'
@@ -13,7 +13,7 @@ Page({
   onReady() {
     if (this.getTabBar) {
       const tabbar = this.getTabBar<TabbarData>()
-      tabbar.setData({ active: 2 })
+      tabbar.setData({ active: 0 })
     }
   },
 })

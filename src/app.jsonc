@@ -1,7 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/calendar/calendar",
     /*# INJECT_START {"key": "page"} #*/
+    "pages/index/index",
+    "pages/event/index/index",
+    "pages/setting/index/index",
+    "pages/setting/menstrual/menstrual",
     /*# INJECT_END #*/
   ],
   "window": {
@@ -10,4 +14,35 @@
     "navigationBarTitleText": "掌心日历",
     "navigationBarTextStyle": "black",
   },
+  "tabBar": {
+    "color": "",
+    "selectedColor": "",
+    "backgroundColor": "",
+    "list": [
+      {
+        "pagePath": "pages/calendar/calendar",
+        "text": "日历"
+      },
+      {
+        "pagePath": "pages/event/index/index",
+        "text": "事件"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "更多"
+      },
+    ],
+    "custom": true
+  },
+  "usingComponents": {
+    "van-icon": "/vendors/vant/icon/index",
+    "van-button": "/vendors/vant/button/index",
+    "van-cell": "/vendors/vant/cell/index",
+    "van-cell-group": "/vendors/vant/cell-group/index",
+    "van-switch-cell": "/vendors/vant/switch-cell/index",
+    "van-picker": "/vendors/vant/picker/index",
+    "van-datetime-picker": "/vendors/vant/datetime-picker/index",
+    "van-dialog": "/vendors/vant/dialog/index",
+    "van-popup": "/vendors/vant/popup/index",
+  }
 }

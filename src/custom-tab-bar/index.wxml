@@ -1,0 +1,16 @@
+<!--
+ * Component: components/index/index
+ * License: MIT
+ * Created: 2019-05-31 10:24
+-->
+
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item
+    wx:for="{{ list }}"
+    wx:key="{{ index }}"
+    icon="{{ item.icon }}"
+    info="{{ item.info }}"
+  >
+    {{ item.label }}
+  </van-tabbar-item>
+</van-tabbar>
