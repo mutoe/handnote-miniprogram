@@ -1,13 +1,13 @@
 {
-  "name": "miniprogram-template",
-  "version": "0.1.1",
-  "description": "Mini Program Template Projects",
+  "name": "handnote-miniprogram",
+  "version": "0.2.0",
+  "description": "Mini Program for Handnote",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NewFuture/miniprogram-template.git"
+    "url": "https://github.com/mutoe/handnote-miniprogram.git"
   },
   "license": "MIT",
-  "author": "NewFuture <github@newfuture.cc>",
+  "author": "mutoe <mutoe@foxmail.com>",
   "main": "dist/app.js",
   "scripts": {
     "build": "miniprogram-build build -c env/dev.jsonc --release",
