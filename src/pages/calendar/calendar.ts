@@ -4,7 +4,6 @@
  * Created: 2019-06-03 09:15
  */
 
-import { TabbarData } from '../../custom-tab-bar'
 import { MyApp } from '/app'
 import { getDayInMonth, getLastMonth } from '/utils/date'
 
@@ -32,10 +31,6 @@ Component({
   lifetimes: {
     attached() {
       const rect = app.globalData.menuRect
-      if (this.getTabBar) {
-        const tabbar = this.getTabBar<TabbarData>()
-        tabbar.setData({ active: 0 })
-      }
       this.initCalendar()
       this.setData({
         rect,

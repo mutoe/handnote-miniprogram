@@ -8,10 +8,4 @@
 
 Page({
   data: {},
-  onReady() {
-    if (this.getTabBar) {
-      const tabbar = this.getTabBar()
-      tabbar.setData({ active: 3 })
-    }
-  },
 })

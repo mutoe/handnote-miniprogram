@@ -8,7 +8,7 @@
 * import `wxss` 结尾的本地文件，表示使用 小程序的 import
 * 编译时会进行保留, 通常用于仅在特定页面/组件直接共享样式
 */
-// @import "/style/common.wxss"; // 编译之后不便
+@import 'common.wxss';
 
 .container {
   height: 100%;
@@ -22,14 +22,6 @@
 
 progress {
   color: red;
-}
-
-.circle {
-  /*
-    * 可直接使用 url() 本地资源文件
-    * 打包之后会对图片进行无损压缩和inline处理
-    */
-  background-image: url('./assets/icon/test.svg');
 }
 
 swiper,
