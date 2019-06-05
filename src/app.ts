@@ -8,8 +8,10 @@ export interface MyApp {
     menuRect: wx.Rect
   }
   userInfoReadyCallback?(res: wx.UserInfo): void
+  /** 初始化请求库 */
+  initRequest(): void
   wxLogin(): void
-  chechSession(): void
+  checkSession(): void
   getAccessToken(): string
   /** 读取数据 */
   fetchData(): void
@@ -21,21 +23,42 @@ export interface MyApp {
 
 App<MyApp>({
   onLaunch() {
-    REQUEST.Defaults.baseURL = '{{BASE_URL}}'
-    REQUEST.Defaults.transformResponse = transformRequestResponseOkData
-    REQUEST.Defaults.headers = {
-      Authorization: null,
-    }
+    this.initRequest()
+
     const { windowWidth } = wx.getSystemInfoSync()
     this.globalData.menuRect = wx.getMenuButtonBoundingClientRect()
     this.globalData.clientWidth = windowWidth
 
     console.log('{{VERSION}}') // eslint-disable-line no-console
     // 检查登录态
-    this.chechSession()
+    this.checkSession()
   },
 
-  chechSession() {
+  initRequest() {
+    REQUEST.Defaults.baseURL = '{{BASE_URL}}'
+    REQUEST.Defaults.transformResponse = transformRequestResponseOkData
+    REQUEST.Defaults.headers = {
+      Authorization: null,
+    }
+    REQUEST.Listeners.onResponse.push(({ statusCode, data }) => {
+      if (statusCode < 400) return
+      switch (statusCode) {
+        case 401:
+          wx.removeStorageSync('accessToken')
+          this.checkSession()
+          break
+        case 422:
+          wx.showToast({
+            title: (data as any).error.message,
+            icon: 'none',
+          })
+          break
+      }
+      console.error(statusCode, data)
+    })
+  },
+
+  checkSession() {
     // 检查 session 是否过期 过期就刷新服务端保存的 session_key
     wx.checkSession({
       success: () => {
