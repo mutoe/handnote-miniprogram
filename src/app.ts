@@ -54,7 +54,7 @@ App<MyApp>({
           })
           break
       }
-      console.error(statusCode, data)
+      console.error(statusCode, data) // eslint-disable-line no-console
     })
   },
 

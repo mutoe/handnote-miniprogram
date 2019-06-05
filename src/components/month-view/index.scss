@@ -12,6 +12,7 @@
 
   .item {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     height: (100vw/7);
@@ -19,6 +20,19 @@
 
     &.current-month {
       color: $text-color;
+    }
+
+    .dot {
+      position: absolute;
+      width: 10rpx;
+      height: 10rpx;
+      border-radius: 10rpx;
+    }
+
+    .menstrual {
+      background-color: red;
+      bottom: 10rpx;
+      left: calc(50% - 5rpx);
     }
   }
 }
