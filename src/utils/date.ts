@@ -1,6 +1,3 @@
-import { BaseStatus } from '/common'
-import { MenstrualOptions } from '/pages/setting/menstrual/menstrual'
-
 /** 一天的毫秒数 */
 export const ONE_DAY = 24 * 3600 * 1000
 
@@ -30,7 +27,7 @@ export function getLastMonth(date: number | Date, offset = -1): number {
  */
 export function getDayIsManstrual(date?: DateLike, menstrualOptions?: MenstrualOptions): boolean {
   const options: MenstrualOptions = menstrualOptions ||
-    wx.getStorageSync('menstrual') || { status: BaseStatus.DISABLED }
+    wx.getStorageSync('menstrual') || { status: 0 }
   if (!options.status) return false
   const current = date ? +new Date(date) : Date.now()
   const start = +new Date(options.lastDate)

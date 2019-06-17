@@ -4,7 +4,6 @@
  * Created: 2019-06-03 15:12
  */
 
-import { MenstrualOptions } from '/pages/setting/menstrual/menstrual'
 import { getDayInMonth, getDayIsManstrual, ONE_DAY } from '/utils/date'
 
 /** 获取某月的天数组成的数组 */

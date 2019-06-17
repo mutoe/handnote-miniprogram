@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "miniprogram-request": "^4.5.3",
-    "tslib": "^1.9.3"
+    "tslib": "^1.10.0"
   },
   "devDependencies": {
     "@dragongate/miniprogram-api-typings": "^2.6.9",
