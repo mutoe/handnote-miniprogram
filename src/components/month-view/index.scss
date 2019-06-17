@@ -27,12 +27,22 @@
       width: 10rpx;
       height: 10rpx;
       border-radius: 10rpx;
+
+      &.menstrual {
+        background-color: $menstrual-color;
+        bottom: 10rpx;
+        left: calc(50% - 5rpx);
+      }
     }
 
-    .menstrual {
-      background-color: red;
-      bottom: 10rpx;
-      left: calc(50% - 5rpx);
+    .today {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border: 1px solid red;
+      border-radius: 8rpx;
     }
   }
 }

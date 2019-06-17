@@ -36,3 +36,14 @@ export function getDayIsManstrual(date?: DateLike, menstrualOptions?: MenstrualO
   const isInDuration = dayInCycle - options.duration <= 0
   return isInDuration
 }
+
+/** 获取某天的日期是否是今天 */
+export function getDayIsToday(date: DateLike): boolean {
+  date = new Date(date)
+  const now = new Date()
+  return (
+    date.getDate() === now.getDate() &&
+    date.getMonth() === now.getMonth() &&
+    date.getFullYear() === now.getFullYear()
+  )
+}

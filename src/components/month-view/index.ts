@@ -4,7 +4,7 @@
  * Created: 2019-06-03 15:12
  */
 
-import { getDayInMonth, getDayIsManstrual, ONE_DAY } from '/utils/date'
+import { getDayInMonth, getDayIsManstrual, getDayIsToday, ONE_DAY } from '/utils/date'
 
 /** 获取某月的天数组成的数组 */
 function getMonthArray(year: number, month: number): object[] {
@@ -15,6 +15,7 @@ function getMonthArray(year: number, month: number): object[] {
     label: i + 1,
     date: date + i * ONE_DAY,
     isMenstrual: getDayIsManstrual(date + i * ONE_DAY, menstrualOptions),
+    isToday: getDayIsToday(date + i * ONE_DAY),
   }))
 }
 
