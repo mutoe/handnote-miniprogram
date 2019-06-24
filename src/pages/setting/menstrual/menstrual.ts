@@ -30,7 +30,7 @@ Component({
       const status = enable ? 1 : 0
       const data = { status, lastDate, duration, cycle }
       wx.setStorage({ key: 'menstrual', data })
-      REQUEST.post('/menstrual', { ...data, enable })
+      REQUEST.put('/menstrual', { ...data, enable })
     },
   },
   lifetimes: {
