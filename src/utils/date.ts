@@ -5,6 +5,54 @@ export const ONE_DAY = 24 * 3600 * 1000
 export type DateLike = Date | string | number
 
 /**
+ * 数字格式化
+ * @param n 整数
+ */
+function formatNumber(n: number): string {
+  const str = n.toString()
+  return str[1] ? str : '0' + str
+}
+
+/**
+ * 格式化时间
+ *
+ * @param {DateLike} date
+ * @param {string} [formatter='YYYY-MM-DD']
+ * @returns {string}
+ */
+export function formatDate(dateInput: DateLike, formatter = 'YYYY-MM-DD'): string {
+  const date = typeof dateInput === 'object' ? dateInput : new Date(dateInput)
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  const second = date.getSeconds()
+
+  const YYYY = '' + year
+  const YY = YYYY.substring(2, 4)
+  const M = month
+  const MM = formatNumber(M)
+  const D = day
+  const DD = formatNumber(D)
+  const H = hour
+  const HH = formatNumber(H)
+  const m = minute
+  const mm = formatNumber(m)
+  const s = second
+  const ss = formatNumber(s)
+
+  return formatter
+    .replace(/YYYY/, YYYY)
+    .replace(/YY/, YY)
+    .replace(/MM/, MM)
+    .replace(/DD/, DD)
+    .replace(/HH/, HH)
+    .replace(/mm/, mm)
+    .replace(/ss/, ss)
+}
+
+/**
  * 获取某月有多少天
  */
 export function getDayInMonth(year: number, month: number): number {

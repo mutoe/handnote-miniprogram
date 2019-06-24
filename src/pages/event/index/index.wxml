@@ -1,7 +1,9 @@
-<!--
- * Page: pages/event/index/index
- * License: MIT
- * Created: 2019-05-31 13:53
--->
+<custom-header title="事件">
+  <view slot="left">
+    <van-icon name="plus" size="1.5em" style="vertical-align: -0.7em;" bind:tap="onAdd"></van-icon>
+  </view>
+</custom-header>
 
-<view>page: index</view>
+<view class="p-event-index" style="padding-top: {{ paddingTop }}px;">
+  <view class="decor">123</view>
+</view>

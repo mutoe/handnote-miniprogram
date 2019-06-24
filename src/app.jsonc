@@ -6,6 +6,7 @@
     "pages/event/index/index",
     "pages/setting/index/index",
     "pages/setting/menstrual/menstrual",
+    "pages/event/add/add",
     /*# INJECT_END #*/
   ],
   "window": {
@@ -44,10 +45,13 @@
     "custom-header": "/components/custom-header/index",
     "van-tabbar": "/vendors/vant/tabbar/index",
     "van-tabbar-item": "/vendors/vant/tabbar-item/index",
+    "van-tab": "/vendors/vant/tab/index",
+    "van-tabs": "/vendors/vant/tabs/index",
     "van-icon": "/vendors/vant/icon/index",
     "van-button": "/vendors/vant/button/index",
     "van-cell": "/vendors/vant/cell/index",
     "van-cell-group": "/vendors/vant/cell-group/index",
+    "van-field": "/vendors/vant/field/index",
     "van-switch-cell": "/vendors/vant/switch-cell/index",
     "van-picker": "/vendors/vant/picker/index",
     "van-datetime-picker": "/vendors/vant/datetime-picker/index",

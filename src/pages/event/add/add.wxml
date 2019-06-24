@@ -1,0 +1,42 @@
+<!--
+ * Page: pages/event/add/add
+ * License: MIT
+ * Created: 2019-06-17 16:20
+-->
+
+<view class="p-event-add">
+  <van-tabs class="van-tabs" active="{{ active }}" animated swipeable>
+    <van-tab class="van-tab" title="纪念日">
+      <picker
+        name="type"
+        mode="selector"
+        disabled="{{ types.length === 1 }}"
+        range="{{ types }}"
+        range-key="label"
+        value="{{ typeIndex }}"
+        bind:change="onTypeChange"
+      >
+        <van-cell title="纪念日类型" value="{{ types[typeIndex].label }}"></van-cell>
+      </picker>
+      <van-field
+        wx:if="{{ typeIndex === 0 }}"
+        value="{{ person }}"
+        placeholder="请输入名字"
+        label="寿星"
+        error="{{ personMessage }}"
+        input-align="right"
+        error-message-align="right"
+        bind:input="onPersonInput"
+      ></van-field>
+      <picker name="date" mode="date" value="{{ date }}" bind:change="onDateChange">
+        <van-cell title="日期" value="{{ date }}"></van-cell>
+      </picker>
+
+      <van-button size="large" bind:tap="onSubmit">保存</van-button>
+    </van-tab>
+
+    <van-tab class="van-tab" title="日程">
+      日程
+    </van-tab>
+  </van-tabs>
+</view>
