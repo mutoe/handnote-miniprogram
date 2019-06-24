@@ -20,6 +20,14 @@
   box-sizing: border-box;
 }
 
+page {
+  height: 100%;
+
+  > view {
+    height: 100%;
+  }
+}
+
 progress {
   color: red;
 }

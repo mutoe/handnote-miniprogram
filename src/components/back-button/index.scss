@@ -1,0 +1,17 @@
+@import '../../var';
+
+.left-capsule {
+  position: fixed;
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 750rpx;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.back-icon {
+  width: 30rpx;
+  height: auto;
+}

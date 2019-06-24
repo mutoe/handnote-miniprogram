@@ -1,0 +1,29 @@
+/*!
+ * Component: components/index/index
+ * License: MIT
+ * Created: 2019-06-17 15:23
+ */
+
+.header {
+  box-sizing: content-box;
+  position: fixed;
+  top: 0;
+  z-index: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: #fff;
+  transform: translateZ(0);
+}
+
+.left-capsule {
+  position: fixed;
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 750rpx;
+  background-color: rgba(#fff, 0.6);
+}

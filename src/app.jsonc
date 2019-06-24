@@ -40,6 +40,8 @@
     ],
   },
   "usingComponents": {
+    "back-button": "/components/back-button/index",
+    "custom-header": "/components/custom-header/index",
     "van-tabbar": "/vendors/vant/tabbar/index",
     "van-tabbar-item": "/vendors/vant/tabbar-item/index",
     "van-icon": "/vendors/vant/icon/index",
@@ -51,5 +53,6 @@
     "van-datetime-picker": "/vendors/vant/datetime-picker/index",
     "van-dialog": "/vendors/vant/dialog/index",
     "van-popup": "/vendors/vant/popup/index",
+    "van-toast": "/vendors/vant/toast/index",
   }
 }

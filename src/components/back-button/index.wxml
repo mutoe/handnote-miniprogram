@@ -1,0 +1,7 @@
+<cover-view class="left-capsule" style="{{ capsuleStyle }}" bind:tap="goBack">
+  <cover-image
+    class="back-icon"
+    src="/images/ico_title_back_black.png"
+    mode="widthFix"
+  ></cover-image>
+</cover-view>
