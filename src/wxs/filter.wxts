@@ -1,5 +1,8 @@
 /// <reference types="miniprogram-wxs"/>
 
+type DateLike = Date | string | number
+const ONE_DAY = 1000 * 3600 * 24
+
 /**
  * 数字格式化
  * @param n 整数
@@ -47,6 +50,22 @@ function formatTime(dateInput?: Date | string | number, formatter = 'YYYY-MM-DD'
     .replace(getRegExp('ss'), ss)
 }
 
+/** 距离下一个周期还有多少天 */
+function toNext(dateInput: DateLike, val: number, period: 'year' | 'month' | 'week'): number {
+  const date = typeof dateInput === 'object' ? dateInput : getDate(dateInput)
+  const now = getDate()
+  let year = date.getFullYear()
+  let month = date.getMonth()
+  let day = date.getDate()
+  if (period === 'year') year += val
+  else if (period === 'month') month += val
+  else if (period === 'week') day += 7
+  const target = getDate(year, month, day)
+  const offsetDay = (+target - +now) / ONE_DAY
+  return Math.floor(offsetDay)
+}
+
 module.exports = {
   formatTime,
+  toNext,
 }

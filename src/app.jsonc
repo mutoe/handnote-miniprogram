@@ -53,6 +53,7 @@
     "van-cell-group": "/vendors/vant/cell-group/index",
     "van-field": "/vendors/vant/field/index",
     "van-switch-cell": "/vendors/vant/switch-cell/index",
+    "van-swipe-cell": "/vendors/vant/swipe-cell/index",
     "van-picker": "/vendors/vant/picker/index",
     "van-datetime-picker": "/vendors/vant/datetime-picker/index",
     "van-dialog": "/vendors/vant/dialog/index",

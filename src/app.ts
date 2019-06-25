@@ -6,6 +6,7 @@ export interface MyApp {
     date: Date
     clientWidth: number
     menuRect: wx.Rect
+    user: UserLogged
   }
   userInfoReadyCallback?(res: wx.UserInfo): void
   /** 初始化请求库 */
@@ -94,9 +95,10 @@ App<MyApp>({
   },
 
   async fetchData() {
-    const { menstrual } = await REQUEST.get('/user')
-    if (menstrual) {
-      wx.setStorage({ key: 'menstrual', data: menstrual })
+    const user = await REQUEST.get<UserLogged>('/user')
+    this.globalData.user = user
+    if (user.menstrual) {
+      wx.setStorage({ key: 'menstrual', data: user.menstrual })
     }
   },
 
@@ -116,5 +118,6 @@ App<MyApp>({
     date: new Date(),
     clientWidth: 750,
     menuRect: {} as any,
+    user: { id: '' },
   },
 })

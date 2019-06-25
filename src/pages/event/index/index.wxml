@@ -1,9 +1,31 @@
 <custom-header title="事件">
-  <view slot="left">
-    <van-icon name="plus" size="1.5em" style="vertical-align: -0.7em;" bind:tap="onAdd"></van-icon>
+  <view slot="left" class="left-capsule-wrap">
+    <navigator url="/pages/event/add/add">
+      <van-icon name="plus" size="1.5em" style="vertical-align: -0.7em;"></van-icon>
+    </navigator>
   </view>
 </custom-header>
 
 <view class="p-event-index" style="padding-top: {{ paddingTop }}px;">
-  <view class="decor">123</view>
+  <van-swipe-cell
+    wx:for="{{ events }}"
+    wx:key="{{ index }}"
+    right-width="{{ 65 }}"
+    left-width="{{ 65 }}"
+  >
+    <view slot="left">完成</view>
+    <view slot="right">删除</view>
+    <van-cell
+      wx:if="{{ item.type === 'birthday' }}"
+      title="{{ item.person }}的生日"
+      value="还有 {{ filter.toNext(item.date, 1, 'year') }} 天"
+    ></van-cell>
+    <van-cell
+      wx:elif="{{ item.type === 'love' }}"
+      title="恋爱纪念日"
+      value="还有 {{ filter.toNext(item.date, 1, 'year') }} 天"
+    ></van-cell>
+  </van-swipe-cell>
 </view>
+
+<wxs module="filter" src="../../../wxs/filter.wxs"></wxs>
