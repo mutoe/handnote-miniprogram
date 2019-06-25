@@ -38,7 +38,17 @@ Page({
     const person = event.detail
     this.setData({ person, personMessage: '' })
   },
-  async onSubmit() {
+  onSubmitWithoutBack() {
+    this.submit(() => {
+      this.setData({ person: '' })
+    })
+  },
+  onSubmit() {
+    this.submit(() => {
+      wx.navigateBack({ delta: 1 })
+    })
+  },
+  async submit(callback = () => {}) {
     const [year, month, day] = this.data.date.split('-').map((i) => +i)
     const form = {
       type: types[this.data.typeIndex].name,
@@ -51,5 +61,6 @@ Page({
     }
     await REQUEST.post('/memorial', form)
     wx.showToast({ title: '添加成功' })
+    callback()
   },
 })

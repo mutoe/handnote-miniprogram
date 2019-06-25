@@ -32,7 +32,9 @@
         <van-cell title="日期" value="{{ date }}"></van-cell>
       </picker>
 
-      <van-button size="large" bind:tap="onSubmit">保存</van-button>
+      <van-button size="large" bind:tap="onSubmit" bind:longpress="onSubmitWithoutBack">
+        保存
+      </van-button>
     </van-tab>
 
     <van-tab class="van-tab" title="日程">
