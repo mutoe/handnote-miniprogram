@@ -33,7 +33,7 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.rulers": [
-    100
+    120
   ],
   // wxml
   "[wxml]": {
