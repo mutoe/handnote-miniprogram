@@ -65,7 +65,18 @@ function toNext(dateInput: DateLike, val: number, period: 'year' | 'month' | 'we
   return Math.floor(offsetDay)
 }
 
+/** 获取某天到今天到天数差 */
+function fromNow(dateInput: DateLike, period: 'day' | 'year' = 'day'): number {
+  const date = typeof dateInput === 'object' ? dateInput : getDate(dateInput)
+  const now = getDate()
+  const offsetDay = (+now - +date) / ONE_DAY
+  if (period === 'day') return Math.floor(offsetDay)
+  const offsetYear = offsetDay / 365
+  return Math.floor(offsetYear)
+}
+
 module.exports = {
   formatTime,
   toNext,
+  fromNow,
 }

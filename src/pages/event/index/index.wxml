@@ -7,12 +7,7 @@
 </custom-header>
 
 <view class="p-event-index" style="padding-top: {{ paddingTop }}px;">
-  <van-swipe-cell
-    wx:for="{{ events }}"
-    wx:key="{{ index }}"
-    right-width="{{ 65 }}"
-    left-width="{{ 65 }}"
-  >
+  <van-swipe-cell wx:for="{{ events }}" wx:key="{{ index }}" right-width="{{ 65 }}" left-width="{{ 65 }}">
     <view slot="left">完成</view>
     <view slot="right">删除</view>
     <van-cell
@@ -22,7 +17,7 @@
     ></van-cell>
     <van-cell
       wx:elif="{{ item.type === 'love' }}"
-      title="恋爱纪念日"
+      title="恋爱 {{ filter.fromNow(item.date, 'year') + 1 }} 周年纪念日"
       value="还有 {{ filter.toNext(item.date, 1, 'year') }} 天"
     ></van-cell>
   </van-swipe-cell>
