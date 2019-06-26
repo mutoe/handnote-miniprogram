@@ -4,5 +4,6 @@
     "APP_ID": "wx84a4d57261f89be7", // 开发环境 小程序 AppID
     "VERSION": "{{package.version}}", //使用当前package.json中的version字段进行替换
     "BASE_URL": "http://localhost:3050/api", // 开发环境 API
+    // "BASE_URL": "https://mutoe.imhec.com/handnote/api", // 开发环境 API
   },
 }

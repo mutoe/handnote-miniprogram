@@ -3,6 +3,6 @@
   "var": {
     "APP_ID": "wx84a4d57261f89be7", // 生产环境 小程序 AppID
     "VERSION": "{{package.version}}", //使用当前package.json中的version字段进行替换
-    "BASE_URL": "https://handnote.mutoe.com/api", // 生产环境 API
+    "BASE_URL": "https://mutoe.imhec.com/handnote/api", // 生产环境 API
   },
 }
