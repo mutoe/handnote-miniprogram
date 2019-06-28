@@ -13,4 +13,8 @@ Page({
       },
     ],
   },
+  onShow() {
+    const tabbar = this.getTabBar()
+    tabbar && tabbar.setData({ active: 2 })
+  },
 })

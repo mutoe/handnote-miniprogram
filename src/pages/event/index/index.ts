@@ -18,6 +18,10 @@ Page({
       }
     }, 50)
   },
+  onShow() {
+    const tabbar = this.getTabBar()
+    tabbar && tabbar.setData({ active: 1 })
+  },
   initPage() {
     this.setData({ events: app.globalData.user.memorials || [] })
   },

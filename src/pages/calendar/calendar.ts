@@ -39,6 +39,12 @@ Component({
       })
     },
   },
+  pageLifetimes: {
+    show() {
+      const tabbar = this.getTabBar()
+      tabbar && tabbar.setData({ active: 0 })
+    },
+  },
   methods: {
     /** 回到今天, 为了实现正确的左右滑动效果, 不直接调用 initCalendar 方法 */
     gotoToday() {

@@ -1,0 +1,12 @@
+/*!
+ * Component: components/index/index
+ * License: MIT
+ * Created: 2019-06-29 16:51
+ */
+{
+  "component": true,
+  "usingComponents": {
+    "van-tabbar": "/vendors/vant/tabbar/index",
+    "van-tabbar-item": "/vendors/vant/tabbar-item/index",
+  }
+}
