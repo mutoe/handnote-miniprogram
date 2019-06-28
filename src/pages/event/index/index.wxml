@@ -7,9 +7,9 @@
 </custom-header>
 
 <view class="p-event-index" style="padding-top: {{ paddingTop }}px;">
-  <van-swipe-cell wx:for="{{ events }}" wx:key="{{ index }}" right-width="{{ 65 }}" left-width="{{ 65 }}">
-    <view slot="left">完成</view>
-    <view slot="right">删除</view>
+  <van-swipe-cell wx:for="{{ events }}" wx:key="{{ index }}" left-width="{{ 65 }}">
+    <view class="slide-btn left" slot="left">删除</view>
+    <!-- <view class="slide-btn right" slot="right">完成</view> -->
     <van-cell
       wx:if="{{ item.type === 'birthday' }}"
       title="{{ item.person }}的生日"

@@ -12,10 +12,7 @@ interface MemorialType {
   label: string
 }
 
-const types: MemorialType[] = [
-  { name: 'birthday', label: '生日' },
-  { name: 'love', label: '恋爱纪念日' },
-]
+const types: MemorialType[] = [{ name: 'birthday', label: '生日' }, { name: 'love', label: '恋爱纪念日' }]
 
 Page({
   data: {

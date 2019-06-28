@@ -4,5 +4,6 @@
  * Created: 2019-05-31 13:53
  */
 {
-  "navigationStyle": "custom"
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true
 }

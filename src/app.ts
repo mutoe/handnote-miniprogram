@@ -38,9 +38,9 @@ App<MyApp>({
   initRequest() {
     REQUEST.Defaults.baseURL = '{{BASE_URL}}'
     REQUEST.Defaults.transformResponse = transformRequestResponseOkData
-    REQUEST.Defaults.headers = {
-      Authorization: null,
-    }
+    // REQUEST.Defaults.headers = {
+    //   Authorization: undefined,
+    // }
     REQUEST.Listeners.onResponse.push(({ statusCode, data }) => {
       if (statusCode < 400) return
       switch (statusCode) {

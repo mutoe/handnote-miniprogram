@@ -1,3 +1,4 @@
+import { REQUEST } from 'miniprogram-request'
 import { MyApp } from '/app'
 
 const app = getApp<MyApp>()
@@ -21,6 +22,10 @@ Page({
   onShow() {
     const tabbar = this.getTabBar()
     tabbar && tabbar.setData({ active: 1 })
+  },
+  async onPullDownRefresh() {
+    const a = await REQUEST.get('/memorial')
+    console.log(a)
   },
   initPage() {
     this.setData({ events: app.globalData.user.memorials || [] })
