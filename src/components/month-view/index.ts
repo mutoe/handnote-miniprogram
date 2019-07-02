@@ -51,6 +51,11 @@ Component({
       this.initData()
     },
   },
+  pageLifetimes: {
+    show() {
+      this.initData()
+    },
+  },
 
   /**
    * Component methods
