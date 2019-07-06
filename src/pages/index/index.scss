@@ -10,18 +10,18 @@
 
   .items {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-gap: 20rpx;
+    grid-template-columns: repeat(3, 1fr);
 
     .item {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 30vw;
+      font-size: 80%;
       border: 1px solid $border-color;
       border-radius: $border-radius;
-      font-size: 80%;
     }
   }
 }
