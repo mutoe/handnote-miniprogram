@@ -8,10 +8,10 @@
 
 .custom-navigation {
   position: fixed;
-  width: 100%;
-  box-sizing: border-box;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .Calendar {
@@ -21,8 +21,8 @@
 
     .item {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: (100vw/7);
       color: $decor-color;
 
@@ -36,8 +36,8 @@
     font-size: 80%;
 
     .item {
-      height: 40rpx;
       align-items: flex-end;
+      height: 40rpx;
     }
   }
 }

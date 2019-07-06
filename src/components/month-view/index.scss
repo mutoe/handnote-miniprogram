@@ -11,10 +11,10 @@
   grid-template-columns: repeat(7, 1fr);
 
   .item {
-    display: flex;
     position: relative;
-    align-items: center;
+    display: flex;
     justify-content: center;
+    align-items: center;
     height: (100vw/7);
     color: $decor-color;
 
@@ -29,18 +29,18 @@
       border-radius: 10rpx;
 
       &.menstrual {
-        background-color: $menstrual-color;
         bottom: 10rpx;
         left: calc(50% - 5rpx);
+        background-color: $menstrual-color;
       }
     }
 
     .today {
       position: absolute;
-      left: 0;
-      right: 0;
       top: 0;
+      right: 0;
       bottom: 0;
+      left: 0;
       border: 1px solid red;
       border-radius: 8rpx;
     }

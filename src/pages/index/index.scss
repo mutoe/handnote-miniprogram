@@ -16,12 +16,12 @@
     .item {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      font-size: 80%;
+      align-items: center;
       height: 30vw;
       border: 1px solid $border-color;
       border-radius: $border-radius;
+      font-size: 80%;
     }
   }
 }
